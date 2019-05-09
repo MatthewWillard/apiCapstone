@@ -90,8 +90,9 @@ function displayResults(responseJson) {
     for (let i = 0; i < responseJson.events.event.length; i++) {
         $('#results-list').append(
             `<li><h3>${responseJson.events.event[i].title}</h3>
-            <p>${responseJson.events.event[i].venue_address} , ${responseJson.events.event[i].city_name} </p>
-            <div><a href='${responseJson.events.event[i].url}'>Event Page</a></div>
+            <p>Address:${responseJson.events.event[i].venue_address} , ${responseJson.events.event[i].city_name} </p>
+            <p> Start Date and Time: ${responseJson.events.event[i].start_time}</p>
+            <div><a href='${responseJson.events.event[i].url}'>Link to Event Page</a></div>
             `
         )};
 }
