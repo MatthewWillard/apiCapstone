@@ -1,10 +1,16 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  font-size: 20px;
+  font-family: sans-serif;
   color: black;
+  background: white;
+  /*background: linear-gradient(rgb(47,150,163), rgb(48,62,143));*/
+  height: 100%;
+  font-size: 20px;
   text-align: center;
 }
 
@@ -14,11 +20,10 @@ nav {
   left: 0;
   right: 0;
   padding: 20px 0;
-  background-color: darkgrey;
+  background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)); ;
+  color: white;
 }
 
 header {
-  padding: 250px 0;
-  background-color: black;
-  color: rgb(236, 236, 255);
+  padding: 150px 0;
 }
