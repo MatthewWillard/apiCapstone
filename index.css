@@ -2,16 +2,36 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
-  font-family: sans-serif;
-  color: black;
-  background: white;
-  /*background: linear-gradient(rgb(47,150,163), rgb(48,62,143));*/
+  color: white;
   height: 100%;
   font-size: 20px;
   text-align: center;
+
+}
+
+#musicPage {
+  background: url(images/lead-singer.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#sportsPage {
+  background: url(images/team.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#homePage {
+  background: url(images/chairs.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 nav {
@@ -20,10 +40,77 @@ nav {
   left: 0;
   right: 0;
   padding: 20px 0;
-  background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)); ;
+  background:linear-gradient(black, darkgrey, grey);
   color: white;
 }
 
+li {
+  display: inline;
+}
+
+nav a {
+  padding: 8px;
+}
+
+
 header {
   padding: 150px 0;
+}
+
+
+#eventCard {
+  background-color: black;
+}
+
+ul h3, li p, li div {
+  background-color: white;
+  border: 3px solid black;
+  margin-left: 470px;
+  margin-right: 470px;
+  border-left: 6px solid black;
+  border-right: 6px solid black;
+  color: black;
+}
+
+ul h3, li p {
+  border-bottom: none;
+}
+
+li p, li div {
+  border-top: none;
+}
+
+button {
+  background-color: white;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 2px solid black;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: black;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+button:active {
+  background-color: black;
+  color: white;
+  box-shadow: 0 5px #666;
+  transform: translateY(2px)
+}
+
+button a {
+  text-decoration: none;
+  color: black;
+}
+
+button a:hover {
+  color: white;
+}
+
+#submitButton {
+cursor: pointer;
 }

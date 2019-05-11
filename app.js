@@ -5,6 +5,7 @@ const proxy = "https://cors-anywhere.herokuapp.com/"
 const searchURL= `${proxy}http://api.eventful.com/json/events/search?`
 const musicEvent = "music"
 const sportEvent = "sports"
+const sortType = "popularity"
 
 function watchFormMusic() {
     $('#searchFormMusic').submit(event => {
@@ -18,6 +19,7 @@ function watchFormMusic() {
 function getMusicInfo(searchQuary, limit = 10) {
     const params = {
         location: searchQuary,
+        sort_order: sortType,
         limit,
         app_key: apiKey,
         keywords: musicEvent
@@ -52,6 +54,7 @@ function watchFormSports() {
 function getSportInfo(searchQuary, limit = 10) {
     const params = {
         location: searchQuary,
+        sort_order: sortType,
         limit,
         app_key: apiKey,
         keywords: sportEvent
@@ -74,10 +77,6 @@ function getSportInfo(searchQuary, limit = 10) {
         });
 }
 
-
-watchFormMusic();
-watchFormSports();
-
 function formatQueryParams(params) {
     const queryItems = Object.keys(params)
       .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
@@ -89,10 +88,15 @@ function displayResults(responseJson) {
     $('#results-list').empty();
     for (let i = 0; i < responseJson.events.event.length; i++) {
         $('#results-list').append(
-            `<li><h3>${responseJson.events.event[i].title}</h3>
-            <p>Address:${responseJson.events.event[i].venue_address} , ${responseJson.events.event[i].city_name} </p>
-            <p> Start Date and Time: ${responseJson.events.event[i].start_time}</p>
-            <div><a href='${responseJson.events.event[i].url}'>Link to Event Page</a></div>
+            `<span id="eventCard"><ul><h3>${responseJson.events.event[i].title}</h3></ul>
+            <li><p>Location: ${responseJson.events.event[i].venue_address} , ${responseJson.events.event[i].city_name} </p></li>
+            <li><p>Date and Time: ${responseJson.events.event[i].start_time}</p></li>
+            <li><div><a href='${responseJson.events.event[i].url}' target="_blank">More info</a></div></span></li>
             `
         )};
 }
+
+$(document).ready(function() {
+    watchFormMusic()
+    watchFormSports();
+});

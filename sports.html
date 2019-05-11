@@ -1,29 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>HTML wireframe</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="index.css">
+  <head>
+    <title>Sporting Events</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
     <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
-</head>
-<body>
-        <header>
-        <nav role="navigation"><a href=index.html>Home Page</a> and <a href=music.html>Music Page</a></nav>
-        <H1>Search for events near you!</H1>
-        </header>   
-        <main role="main">
-        <form id="searchFormSports">
-             Location:
-            <input type="text" name="location" id="search-query-form">
-            <input type="submit" value="Submit" id="submitButton">
-        </form>
-        <p id="js-error-message" class="error-message"></p>
-        <section id="results">
-          <h2></h2>
-          <ul id="results-list">
-          </ul>
-        </section>
-        </main>
-        <script src="app.js"></script>
-</body>
-</html> 
+  </head>
+  <body id="sportsPage">
+    <header>
+      <nav role="navigation">
+        <ul>
+          <button><a href="index.html">Home</a></button>
+          <button><a href="sports.html">Sports</a></button>
+          <button><a href="music.html">Music</a></button>
+        </ul>
+      </nav>
+      <H1>Search for sporting events near you!</H1>
+    </header>
+    <main role="main">
+      <form id="searchFormSports">
+        Location:
+        <input type="text" name="location" id="search-query-form" />
+        <input type="submit" value="Submit" id="submitButton" />
+      </form>
+      <p id="js-error-message" class="error-message"></p>
+      <section id="results">
+        <h2></h2>
+        <ul id="results-list"></ul>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
