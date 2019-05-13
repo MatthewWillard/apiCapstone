@@ -7,20 +7,22 @@ const musicEvent = "music"
 const sportEvent = "sports"
 const sortType = "popularity"
 
+//Watches the music search form 
+
 function watchFormMusic() {
     $('#searchFormMusic').submit(event => {
         event.preventDefault();
         const searchLocation = $('#search-query-form').val();
-        const maxResults = $('#js-max-results').val();
-        getMusicInfo(searchLocation, maxResults);
+        getMusicInfo(searchLocation);
     });
 }
 
-function getMusicInfo(searchQuary, limit = 10) {
+//Takes the form input and adds it to the other parameters
+
+function getMusicInfo(searchQuary) {
     const params = {
         location: searchQuary,
         sort_order: sortType,
-        limit,
         app_key: apiKey,
         keywords: musicEvent
     };
@@ -42,20 +44,23 @@ function getMusicInfo(searchQuary, limit = 10) {
         });
 }
 
+//Watches the sports search form 
+
+
 function watchFormSports() {
     $('#searchFormSports').submit(event => {
         event.preventDefault();
         const searchLocation = $('#search-query-form').val();
-        const maxResults = $('#js-max-results').val();
-        getSportInfo(searchLocation, maxResults);
+        getSportInfo(searchLocation);
     });
 }
 
-function getSportInfo(searchQuary, limit = 10) {
+//Takes the form input and adds it to the other parameters
+
+function getSportInfo(searchQuary) {
     const params = {
         location: searchQuary,
         sort_order: sortType,
-        limit,
         app_key: apiKey,
         keywords: sportEvent
     };
@@ -82,6 +87,8 @@ function formatQueryParams(params) {
       .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
     return queryItems.join('&');
   }
+
+  //Displays the results of the search
 
 function displayResults(responseJson) {
     console.log(responseJson);
