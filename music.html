@@ -11,7 +11,6 @@
     <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
   </head>
   <body id="musicPage">
-    <header>
       <nav role="navigation">
         <ul>
           <button><a href="index.html">Home</a></button>
@@ -19,13 +18,12 @@
           <button><a href="music.html">Music</a></button>
         </ul>
       </nav>
-      <H1>Search for musical events near you!</H1>
-    </header>
+      <H1>Search for musical events near you!</H1>  
     <main role="main">
       <form id="searchFormMusic">
         Location:
         <input type="text" name="location" id="search-query-form" />
-        <input type="submit" value="Submit" id="submitButton" />
+        <input type="submit" value="Search" id="submitButton" />
       </form>
       <p id="js-error-message" class="error-message"></p>
       <section id="results">
